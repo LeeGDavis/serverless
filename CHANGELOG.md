@@ -1,6 +1,10 @@
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+## [3.40.0+patch-2](https://github.com/serverless/serverless/compare/v3.40.0+patch-1...v3.40.0+patch-2) (2025-06-20)
+
+- Add support for nodejs24.x runtime
+
 ## [3.40.0+patch-1](https://github.com/serverless/serverless/compare/v3.39.0...v3.40.0+patch-1) (2025-06-20)
 
 - Add support for nodejs22.x runtime
