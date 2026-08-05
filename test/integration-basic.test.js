@@ -3,7 +3,7 @@
 const path = require('path');
 const fs = require('fs');
 const fse = require('fs-extra');
-const stripAnsi = require('strip-ansi');
+const stripAnsi = require('../lib/utils/strip-ansi');
 const { expect } = require('chai');
 const log = require('log').get('serverless:test');
 const spawn = require('child-process-ext/spawn');

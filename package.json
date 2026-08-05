@@ -1,6 +1,6 @@
 {
   "name": "serverless",
-  "version": "3.40.0+patch-2",
+  "version": "3.40.0+patch-3",
   "description": "Serverless Framework - Build web, mobile and IoT applications with serverless architectures using AWS Lambda, Azure Functions, Google CloudFunctions & more",
   "preferGlobal": true,
   "homepage": "https://serverless.com/framework/docs/",
@@ -22,17 +22,17 @@
     "sls": "./bin/serverless.js"
   },
   "dependencies": {
-    "@aws-sdk/client-api-gateway": "^3.1031.0",
-    "@aws-sdk/client-cognito-identity-provider": "^3.1031.0",
-    "@aws-sdk/client-eventbridge": "^3.1031.0",
-    "@aws-sdk/client-iam": "^3.1031.0",
-    "@aws-sdk/client-lambda": "^3.1031.0",
-    "@aws-sdk/client-s3": "^3.1031.0",
+    "@aws-sdk/client-api-gateway": "^3.1104.0",
+    "@aws-sdk/client-cognito-identity-provider": "^3.1104.0",
+    "@aws-sdk/client-eventbridge": "^3.1104.0",
+    "@aws-sdk/client-iam": "^3.1104.0",
+    "@aws-sdk/client-lambda": "^3.1104.0",
+    "@aws-sdk/client-s3": "^3.1104.0",
     "@serverless/dashboard-plugin": "^7.2.3",
     "@serverless/platform-client": "^4.5.1",
     "@serverless/utils": "^6.15.0",
     "abort-controller": "^3.0.0",
-    "ajv": "^8.18.0",
+    "ajv": "^8.20.0",
     "ajv-formats": "^2.1.1",
     "archiver": "^5.3.2",
     "aws-sdk": "^2.1693.0",
@@ -43,7 +43,7 @@
     "ci-info": "^3.9.0",
     "cli-progress-footer": "^2.3.3",
     "d": "^1.0.2",
-    "dayjs": "^1.11.20",
+    "dayjs": "^1.11.21",
     "decompress": "^4.2.1",
     "dotenv": "^16.6.1",
     "dotenv-expand": "^10.0.0",
@@ -57,7 +57,7 @@
     "graceful-fs": "^4.2.11",
     "https-proxy-agent": "^5.0.1",
     "is-docker": "^2.2.1",
-    "js-yaml": "^4.1.1",
+    "js-yaml": "^4.3.1",
     "json-colorizer": "^2.2.2",
     "json-cycle": "^1.5.0",
     "json-refs": "^3.0.15",
@@ -72,24 +72,24 @@
     "process-utils": "^4.0.0",
     "promise-queue": "^2.2.5",
     "require-from-string": "^2.0.2",
-    "semver": "^7.7.4",
+    "semver": "^7.8.5",
     "signal-exit": "^3.0.7",
     "stream-buffers": "^3.0.3",
     "strip-ansi": "7.2.0",
     "supports-color": "10.2.2",
-    "tar": "^6.2.1",
+    "tar": "^7.5.22",
     "timers-ext": "^0.1.8",
     "type": "^2.7.3",
     "untildify": "^4.0.0",
     "uuid": "^9.0.1",
-    "ws": "^7.5.10",
+    "ws": "^7.5.13",
     "yaml-ast-parser": "0.0.43"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@serverless/eslint-config": "^5.1.0",
     "@serverless/test": "^11.1.1",
-    "adm-zip": "^0.5.17",
+    "adm-zip": "^0.5.18",
     "aws4": "^1.13.2",
     "chai": "^4.5.0",
     "chai-as-promised": "^7.1.2",
@@ -143,7 +143,9 @@
       },
       {
         "files": [
-          "lib/utils/import-esm.js"
+          "lib/configuration/read.js",
+          "lib/plugins/aws/invoke-local/index.js",
+          "lib/utils/require-with-import-fallback.js"
         ],
         "parserOptions": {
           "ecmaVersion": 2020
@@ -247,7 +249,7 @@
     "test:isolated": "mocha-isolated \"test/unit/**/*.test.js\""
   },
   "engines": {
-    "node": ">=12.0"
+    "node": ">=18.0"
   },
   "license": "MIT"
 }

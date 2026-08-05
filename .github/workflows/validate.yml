@@ -12,8 +12,8 @@ env:
   SLS_SCHEMA_CACHE_BASE_DIR: '/home/runner'
 
 jobs:
-  linuxNode16:
-    name: '[Linux] Node.js 16: Lint, Formatting, Eventual Commitlint, Eventual Changelog, Unit & packaging tests'
+  linuxNode18:
+    name: '[Linux] Node.js 18: Lint, Formatting, Eventual Commitlint, Eventual Changelog, Unit & packaging tests'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -37,15 +37,15 @@ jobs:
           path: |
             ~/.npm
             node_modules
-          key: npm-v16-${{ runner.os }}-${{ github.ref }}-${{ hashFiles('package.json') }}
+          key: npm-v18-${{ runner.os }}-${{ github.ref }}-${{ hashFiles('package.json') }}
           restore-keys: |
-            npm-v16-${{ runner.os }}-${{ github.ref }}-
-            npm-v16-${{ runner.os }}-refs/heads/main-
+            npm-v18-${{ runner.os }}-${{ github.ref }}-
+            npm-v18-${{ runner.os }}-refs/heads/main-
 
       - name: Install Node.js and npm
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
 
       - name: Install dependencies
         if: steps.cacheNpm.outputs.cache-hit != 'true'
@@ -75,8 +75,8 @@ jobs:
       - name: Packaging tests
         run: npm run integration-test-run-package
 
-  windowsNode16:
-    name: '[Windows] Node.js v16: Unit tests'
+  windowsNode18:
+    name: '[Windows] Node.js v18: Unit tests'
     runs-on: windows-latest
     steps:
       - name: Checkout repository
@@ -89,15 +89,15 @@ jobs:
           path: |
             ~/.npm
             node_modules
-          key: npm-v16-${{ runner.os }}-${{ github.ref }}-${{ hashFiles('package.json') }}
+          key: npm-v18-${{ runner.os }}-${{ github.ref }}-${{ hashFiles('package.json') }}
           restore-keys: |
-            npm-v16-${{ runner.os }}-${{ github.ref }}-
-            npm-v16-${{ runner.os }}-refs/heads/main-
+            npm-v18-${{ runner.os }}-${{ github.ref }}-
+            npm-v18-${{ runner.os }}-refs/heads/main-
 
       - name: Install Node.js and npm
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
 
       - name: Install dependencies
         if: steps.cacheNpm.outputs.cache-hit != 'true'
@@ -107,8 +107,8 @@ jobs:
       - name: Unit tests
         run: npm test -- -b
 
-  linuxNode14:
-    name: '[Linux] Node.js 14: Isolated unit tests'
+  linuxNode20:
+    name: '[Linux] Node.js 20: Isolated unit tests'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -121,15 +121,15 @@ jobs:
           path: |
             ~/.npm
             node_modules
-          key: npm-v14-${{ runner.os }}-${{ github.ref }}-${{ hashFiles('package.json') }}
+          key: npm-v20-${{ runner.os }}-${{ github.ref }}-${{ hashFiles('package.json') }}
           restore-keys: |
-            npm-v14-${{ runner.os }}-${{ github.ref }}-
-            npm-v14-${{ runner.os }}-refs/heads/main-
+            npm-v20-${{ runner.os }}-${{ github.ref }}-
+            npm-v20-${{ runner.os }}-refs/heads/main-
 
       - name: Install Node.js and npm
         uses: actions/setup-node@v3
         with:
-          node-version: 14.x
+          node-version: 20.x
 
       - name: Install dependencies
         if: steps.cacheNpm.outputs.cache-hit != 'true'
@@ -141,8 +141,8 @@ jobs:
         # Workaround taken from https://github.com/actions/runner/issues/241#issuecomment-577360161
         run: script -e -c "npm run test:isolated -- -b"
 
-  linuxNode12:
-    name: '[Linux] Node.js v12: Node version validation test'
+  linuxNode16:
+    name: '[Linux] Node.js v16: Node version validation test'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -151,7 +151,7 @@ jobs:
       - name: Install Node.js and npm
         uses: actions/setup-node@v3
         with:
-          node-version: 12.x
+          node-version: 16.x
 
       - name: Node version validation test
         run: ./bin/serverless.js 2>&1 | grep -q "does not support"

@@ -13,7 +13,7 @@ if (isMainModule) EvalError.$serverlessCommandStartTime = process.hrtime();
 
 const nodeVersionMajor = Number(process.version.split('.')[0].slice(1));
 const nodeVersionMinor = Number(process.version.split('.')[1]);
-const minimumSupportedVersionMajor = 14;
+const minimumSupportedVersionMajor = 18;
 const minimumSupportedVersionMinor = 0;
 
 if (
@@ -54,12 +54,7 @@ if (isMainModule) {
 
     if (localServerlessBinPath) {
       EvalError.$serverlessInitInstallationVersion = require('../package').version;
-      const colorSupportLevel = require('supports-color').stdout.level;
-      let message = 'Running "serverless" from node_modules\n';
-      if (colorSupportLevel) {
-        message =
-          colorSupportLevel > 2 ? `\x1b[38;5;145m${message}\x1b[39m` : `\x1b[90m${message}\x1b[39m`;
-      }
+      const message = 'Running "serverless" from node_modules\n';
       process.stderr.write(message);
       require(localServerlessBinPath);
       return;
