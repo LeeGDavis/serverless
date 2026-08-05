@@ -13,7 +13,7 @@ if (isMainModule) EvalError.$serverlessCommandStartTime = process.hrtime();
 
 const nodeVersionMajor = Number(process.version.split('.')[0].slice(1));
 const nodeVersionMinor = Number(process.version.split('.')[1]);
-const minimumSupportedVersionMajor = 18;
+const minimumSupportedVersionMajor = 22;
 const minimumSupportedVersionMinor = 0;
 
 if (

@@ -12,7 +12,7 @@ Welcome, and thanks in advance for your help!
 
 ## Setup
 
-First, the preferred node version for development is v18 or later.
+First, the preferred node version for development is v22 or later.
 
 Then, to begin development fork repository and run `npm install` in its root folder.
 

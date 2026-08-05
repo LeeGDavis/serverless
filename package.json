@@ -1,6 +1,6 @@
 {
   "name": "serverless",
-  "version": "3.40.0+patch-3",
+  "version": "3.40.0+patch-4",
   "description": "Serverless Framework - Build web, mobile and IoT applications with serverless architectures using AWS Lambda, Azure Functions, Google CloudFunctions & more",
   "preferGlobal": true,
   "homepage": "https://serverless.com/framework/docs/",
@@ -44,7 +44,6 @@
     "cli-progress-footer": "^2.3.3",
     "d": "^1.0.2",
     "dayjs": "^1.11.21",
-    "decompress": "^4.2.1",
     "dotenv": "^16.6.1",
     "dotenv-expand": "^10.0.0",
     "essentials": "^1.2.0",
@@ -83,7 +82,8 @@
     "untildify": "^4.0.0",
     "uuid": "^9.0.1",
     "ws": "^7.5.13",
-    "yaml-ast-parser": "0.0.43"
+    "yaml-ast-parser": "0.0.43",
+    "yauzl": "^3.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
@@ -249,7 +249,10 @@
     "test:isolated": "mocha-isolated \"test/unit/**/*.test.js\""
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=22.0"
+  },
+  "overrides": {
+    "decompress": "npm:@xhmikosr/decompress@^11.1.4"
   },
   "license": "MIT"
 }
