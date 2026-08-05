@@ -56,7 +56,7 @@ describe('downloadTemplateFromRepo', () => {
 
           throw Error('unknown server type');
         },
-        '@serverless/utils/download': downloadStub,
+        './download': downloadStub,
         'child-process-ext/spawn': spawnStub,
       }
     );
